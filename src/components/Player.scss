@@ -80,11 +80,10 @@
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 15px 15px 0 0;
   position: absolute;
-  top: 0;
-  left: 20px;
+  top: -60px;
+  left: 0;
   width: calc(100% - 40px);
   padding: 10px 10px 10px 150px;
-  opacity: 0;
   transform: translateY(0%);
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
   z-index: 0;
@@ -99,7 +98,7 @@
 }
 
 .progress-container {
-  background: #fff;
+  background: #f8bbd0;
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 0;
