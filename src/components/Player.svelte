@@ -3,9 +3,9 @@ let audio: HTMLAudioElement;
 let progress: HTMLElement;
 let title: string;
 let paused = false;
-let duration;
-let currentTime;
-let width;
+let duration: number;
+let currentTime: number;
+let width: number;
 
 title = "ukulele";
 
@@ -33,7 +33,6 @@ const updateProgress = () => {
 
 const onClickSetProgress = (e: MouseEvent) => {
   const clickX = e.offsetX;
-  const duration = audio.duration;
   audio.currentTime = (clickX / width) * duration;
 };
 </script>
@@ -44,11 +43,10 @@ const onClickSetProgress = (e: MouseEvent) => {
     <h4 contenteditable="true" bind:textContent="{title}"></h4>
     <div
       class="progress-container"
-      id="progress-container"
       bind:clientWidth="{width}"
       on:click="{onClickSetProgress}"
     >
-      <div class="progress" id="progress" bind:this="{progress}"></div>
+      <div class="progress" bind:this="{progress}"></div>
     </div>
   </div>
   <audio
@@ -64,11 +62,7 @@ const onClickSetProgress = (e: MouseEvent) => {
     <button id="prev" class="action-btn">
       <i class="fas fa-backward"></i>
     </button>
-    <button
-      id="play"
-      class="action-btn action-btn-big"
-      on:click="{onClickPlayButton}"
-    >
+    <button class="action-btn action-btn-big" on:click="{onClickPlayButton}">
       <i class="{paused ? 'fas fa-pause' : 'fas fa-play'}"></i>
     </button>
     <button id="next" class="action-btn">
