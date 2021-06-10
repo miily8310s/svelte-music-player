@@ -77,14 +77,14 @@
 }
 
 .music-info {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #fce4ec;
   border-radius: 15px 15px 0 0;
   position: absolute;
-  top: -60px;
-  left: 0;
-  width: calc(100% - 40px);
+  top: 0;
+  left: 20px;
+  width: calc(100% - 180px);
   padding: 10px 10px 10px 150px;
-  transform: translateY(0%);
+  transform: translateY(-100%);
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
   z-index: 0;
   &h4 {
@@ -98,7 +98,8 @@
 }
 
 .progress-container {
-  background: #f8bbd0;
+  // background: #f8bbd0;
+  background: #fff;
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 0;
