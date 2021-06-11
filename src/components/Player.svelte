@@ -2,7 +2,7 @@
 let audio: HTMLAudioElement;
 let progress: HTMLElement;
 let title: string;
-let paused = false;
+let paused = true;
 let duration: number;
 let currentTime: number;
 let width: number;
@@ -19,9 +19,9 @@ const pauseSong = () => {
 
 const onClickPlayButton = () => {
   if (!paused) {
-    playSong();
-  } else {
     pauseSong();
+  } else {
+    playSong();
   }
   paused = !paused;
 };
@@ -56,14 +56,19 @@ const onClickSetProgress = (e: MouseEvent) => {
     bind:duration
     bind:currentTime></audio>
   <div class="img-container">
-    <img src="/images/ukulele.jpg" alt="music-cover" id="cover" />
+    <img
+      src="/images/ukulele.jpg"
+      alt="music-cover"
+      id="cover"
+      style="animation-play-state: {paused ? 'paused' : 'running'}"
+    />
   </div>
   <div class="navigation">
     <button id="prev" class="action-btn">
       <i class="fas fa-backward"></i>
     </button>
     <button class="action-btn action-btn-big" on:click="{onClickPlayButton}">
-      <i class="{paused ? 'fas fa-pause' : 'fas fa-play'}"></i>
+      <i class="{!paused ? 'fas fa-pause' : 'fas fa-play'}"></i>
     </button>
     <button id="next" class="action-btn">
       <i class="fas fa-forward"></i>
