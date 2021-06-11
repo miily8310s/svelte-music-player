@@ -33,12 +33,7 @@
     bottom: 0;
     left: 0;
     animation: rotate 3s linear infinite;
-    // animation-play-state: paused;
   }
-}
-
-.music-container.play .img-container img {
-  // animation-play-state: running;
 }
 
 @keyframes rotate {
@@ -89,11 +84,6 @@
   &h4 {
     margin: 0;
   }
-}
-
-.music-container.play .music-info {
-  opacity: 1;
-  transform: translateY(-100%);
 }
 
 .progress-container {
